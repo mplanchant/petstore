@@ -1,5 +1,7 @@
 # Petstore
 
+Java / Spring Boot / REST training.
+
 ## Requirements
 
 * Java 11
