@@ -1,6 +1,7 @@
 package com.petstore.web.api;
 
 import com.petstore.web.dto.Pet;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,46 +11,25 @@ import java.util.List;
 @RestController
 public class PetsApiImpl implements PetsApi {
 
+    public static final Pet FIDO = new Pet().id(1L).name("Fido").tag("dog").age(3);
+    public static final Pet TIDDLES = new Pet().id(2L).name("Tiddles").tag("cat").age(6);
+
     @Override
     public ResponseEntity<Void> createPets() {
-        return null;
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     @Override
     public ResponseEntity<List<Pet>> listPets(@Valid Integer limit) {
-        var fido = new Pet();
-        fido.setName("Fido");
-        fido.setId(1L);
-        fido.setAge(3);
-        fido.setTag("dog");
-
-        var tiddles = new Pet();
-        tiddles.setName("Tiddles");
-        tiddles.setTag("cat");
-        tiddles.setAge(6);
-        tiddles.setId(2L);
-
-        return ResponseEntity.ok(List.of(fido, tiddles));
+        return ResponseEntity.ok(List.of(FIDO, TIDDLES));
     }
 
     @Override
     public ResponseEntity<Pet> showPetById(String petId) {
-        var fido = new Pet();
-        fido.setName("Fido");
-        fido.setId(1L);
-        fido.setAge(3);
-        fido.setTag("dog");
-
-        var tiddles = new Pet();
-        tiddles.setName("Tiddles");
-        tiddles.setTag("cat");
-        tiddles.setAge(6);
-        tiddles.setId(2L);
-
         if (petId.equals("1")) {
-            return ResponseEntity.ok(fido);
+            return ResponseEntity.ok(FIDO);
         } else if (petId.equals("2")) {
-            return ResponseEntity.ok(tiddles);
+            return ResponseEntity.ok(TIDDLES);
         }
         return ResponseEntity.notFound().build();
     }

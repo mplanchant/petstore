@@ -86,6 +86,8 @@
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
                                 <skipDefaultInterface>true</skipDefaultInterface>
+                                <useBeanValidation>true</useBeanValidation>
+                                <performBeanValidation>true</performBeanValidation>
                             </configOptions>
                         </configuration>
                     </execution>
