@@ -3,18 +3,12 @@ package com.petstore.web.api;
 import com.petstore.web.dto.Pet;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.request.NativeWebRequest;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class PetsApiImpl implements PetsApi {
-    @Override
-    public Optional<NativeWebRequest> getRequest() {
-        return Optional.empty();
-    }
 
     @Override
     public ResponseEntity<Void> createPets() {
@@ -58,6 +52,5 @@ public class PetsApiImpl implements PetsApi {
             return ResponseEntity.ok(tiddles);
         }
         return ResponseEntity.notFound().build();
-
     }
 }

@@ -6,7 +6,7 @@
 
 ## Usage
 
-Start stub with `./mvnw spring-boot:run`.
+Start service with `./mvnw spring-boot:run`.
 
 ## Example requests
 
