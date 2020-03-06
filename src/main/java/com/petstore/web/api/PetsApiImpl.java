@@ -1,6 +1,7 @@
 package com.petstore.web.api;
 
 import com.petstore.web.dto.Pet;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.List;
 
+@Slf4j
 @RestController
 public class PetsApiImpl implements PetsApi {
 
@@ -21,14 +23,17 @@ public class PetsApiImpl implements PetsApi {
 
     @Override
     public ResponseEntity<List<Pet>> listPets(@Valid Integer limit) {
+        log.info("Responding with all pets");
         return ResponseEntity.ok(List.of(FIDO, TIDDLES));
     }
 
     @Override
     public ResponseEntity<Pet> showPetById(String petId) {
         if (petId.equals("1")) {
+            log.info("Responding with Fido");
             return ResponseEntity.ok(FIDO);
         } else if (petId.equals("2")) {
+            log.info("Responding with Tiddles");
             return ResponseEntity.ok(TIDDLES);
         }
         return ResponseEntity.notFound().build();
