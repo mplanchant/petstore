@@ -1,4 +1,4 @@
-# Petstore
+# Petstore [![Build Status](https://travis-ci.com/mplanchant/petstore.svg?branch=master)](https://travis-ci.com/mplanchant/petstore)
 
 Java / Spring Boot / REST training.
 
