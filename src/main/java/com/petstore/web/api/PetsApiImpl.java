@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 @RestController
 public class PetsApiImpl implements PetsApi {
 
-    private final String RESOURCE = "/pet";
+    private final String RESOURCE = "/pets";
 
     private static final Pet FIDO = new Pet().id(1L).name("Fido").tag("dog").age(3);
     private static final Pet TIDDLES = new Pet().id(2L).name("Tiddles").tag("cat").age(6);
